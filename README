@@ -1,0 +1,48 @@
+Student: Miruna-Elena Banu
+Group: 331CA
+
+* Task 1 - simple_semaphore: - I used the function "sleep" to make the cars wait the corresponding
+                               amount of time.
+
+* Task 2 - simple_n_roundabout: - I used a semaphore of size n to allow n cars in the intersection and the
+                                  function "sleep" to make the cars wait the corresponding amount of time.
+
+* Task 3 - simple_strict_1_car_roundabout: - I used a barrier to wait for all the cars to get to the roundabout and then
+                                             a vector of locks so that all of the cars can wait their corresponding time.
+
+* Task 4 - simple_strict_x_car_roundabout: - I used barrier to wait for all the cars to get to the roundabout. Then, I
+                                             created a vector of semaphores so that exactly X cars can enter the intersection
+                                             at a given time. Each semaphore has a barrier that waits for all of the cars to
+                                             enter then lets them out after a certain time.
+
+* Task 5 - simple_max_x_car_roundabout: - I used a vector of semaphores to let maximum X cars on each direction enter the
+                                           intersection then let them exit the intersection after the corresponding
+                                           time as they go.
+
+* Task 6 - priority_intersection: - There are two cases at this problem: - there is a car entering with priority
+                                                                         - there is a car entering without priority
+                                    If the car has priority, it would enter the intersection, increase the number of
+                                    cars without priorty, wait and exit. After exiting, it would decrease the number
+                                    of cars in the intersection and, if there are none left, notify the cars
+                                    without priority that they could enter.
+                                    If the car does not have priority, it could enter the intersection if there are
+                                    not any cars with priority or it would be added to a queue while waiting to be
+                                    notified. When the notification comes, the cars without priority would enter
+                                    the intersection.
+
+* Task 7 - priority_intersection: - If the pedestrians are not finished loop-crossing the street, and are currently in the
+                                    process of crossing, the cars have red light and wait on a notification (via an Object) 
+                                    that the pedestrians have finished the current crossing. When thet finish the current
+                                    crossing, the cars get notified so that they can go.
+
+* Task 8 - simple_maintenance: - I used two semaphores that would lock eachother until X cars have entered both of them
+                                 then, the cars coming from direction 0 are allowed to pass first, followed by the ones
+                                 from the direction 1.
+
+* Task 9 - complex_maintenance: - :(((
+
+* Task 10 - railroad: - I have used 2 ConcurrentLinkedQueues to keep the order of the cars that had arrived
+                        at a barrier, one of them keeps the carId and the other the car's direction. When every
+                        car has arrived at the barrier, the train passes and the queue is emptied (in one of the
+                        threads).
+                        
